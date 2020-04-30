@@ -1,0 +1,30 @@
+<div class="loader" *ngIf="loader">
+</div>
+<p *ngIf="loader" class="loaderp">searching.......</p>
+
+<div class="container" *ngFor="let show of showList">
+	
+    <hr>
+            <div  class="row row-margin-bottom">
+            <div class="col-md-5 no-padding lib-item" data-category="view">
+                <div class="lib-panel">
+                    <div class="row box-shadow">
+                        <div class="col-md-6">
+                            <img class="lib-img-show" src="{{show.show.image.medium}}" (click)="onclickImage(show.show.id)">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="lib-row lib-header">
+                                {{show.show.name}}
+                                <div class="lib-header-seperator"></div>
+                            </div>
+                            <div class="lib-row ">
+                               {{show.show.summary}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        
+        </div>
+</div>

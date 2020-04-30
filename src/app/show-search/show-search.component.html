@@ -1,0 +1,49 @@
+
+
+
+<h1 class="intro">Popular shows airing tonight</h1>
+<div class="loader" *ngIf="loader">
+</div>
+<p *ngIf="loader" class="loaderp">Loading.......</p>
+	
+    <div class="container" *ngFor="let show of arialShows" >
+        <div class="row">
+
+        
+        <div class="movie-card" (click)="showMovieDetails(show.id,show.name)">
+            <div class="movie-header manOfSteel">
+                <div class="header-icon-container">
+                    <img class="lib-img-show" src="{{show.image.medium}}" >
+                </div>
+            </div><!--movie-header-->
+            <div class="movie-content">
+                <div class="movie-content-header">
+                    <a href="#">
+                        <h3 class="movie-title">{{show.name}}</h3>
+                    </a>
+                    <div class="imax-logo"></div>
+                </div>
+                <!-- <div class="movie-info">
+                    <div class="info-section">
+                        <label>Date & Time</label>
+                        <span>Sun 8 Sept - 10:00PM</span>
+                    </div>
+                    <div class="info-section">
+                        <label>Screen</label>
+                        <span>03</span>
+                    </div>
+                    <div class="info-section">
+                        <label>Row</label>
+                        <span>F</span>
+                    </div>
+                    <div class="info-section">
+                        <label>Seat</label>
+                        <span>21,22</span>
+                    </div>
+                </div> -->
+            </div><!--movie-content-->
+        </div><!--movie-card-->
+        
+      
+    </div><!--container-->
+    </div>

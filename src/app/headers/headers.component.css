@@ -1,0 +1,13 @@
+h1{
+    /* padding-top: 30px; */
+    color : white;
+    text-align: center;
+    font-weight: bold;
+    height: 40px;
+    margin-top: 0px;
+}
+.background{
+    background: #3c948b;
+    color:white;
+    
+}

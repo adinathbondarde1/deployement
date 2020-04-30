@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<header >
+  <nav class="navbar navbar-expand-md background">
+    <a class="navbar-brand " style="color: white;" [routerLink]="['/']" routerLinkActive="active">TV Guide</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a href="https://www.tvmaze.com/" class="navbar-brand">
+      <img src="//static.tvmaze.com/images/tvm-header-logo.png" style="background-color:black;"height="28" alt="CoolBrand">
+     </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/home']" style="color: white;"routerLinkActive="active">Home</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+<!--         <a href="#"></a><i class="fa fa-fw fa-search"></i> 
+ -->        <input class="form-control mr-sm-2" type="search" placeholder="enter title show" aria-label="Search" #showName>
+        <a href="#"></a><i class="fa fa-fw fa-search"></i> 
+
+        <button class="btn btn-success my-2 my-sm-0" type="button" (click)="performSearch(showName.value)">
+          Search
+        </button>
+      </form>
+
+        
+
+
+    </div>
+  </nav>
+</header>

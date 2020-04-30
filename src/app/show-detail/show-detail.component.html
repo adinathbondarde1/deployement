@@ -1,0 +1,53 @@
+<div class="loader" *ngIf="loader">
+</div>
+<p *ngIf="loader" class="loaderp">Loading.......</p>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-5"><span *ngIf="showDetail.image != null"><img src="{{showDetail.image.original}}" alt="Image"
+                                                                      class="img-fluid"></span>
+      <span *ngIf="showDetail.image == null"><img src="/assets/img_na.png" alt="No Image" class="img-fluid"></span>
+    </div>
+    <div class="col-md-7">
+      <h1>{{showDetail.name}}</h1>
+      <table class="table table-bordered table-striped table-dark">
+        <tr>
+          <td colspan="4"><span [innerHTML]="showDetail.summary"></span></td>
+        </tr>
+        <tr>
+          <td><strong>Type:</strong> {{showDetail.type}}</td>
+          <td><strong>Status:</strong> {{showDetail.status}}</td>
+          <td><strong>Genre(s):</strong> {{showDetail.genres}}</td>
+          <td><strong>Official Site:</strong> <a href="{{showDetail.officialSite}}">{{showDetail.officialSite}}</a></td>
+         </tr>
+       <!--  <tr>
+          <td><strong>Official Network:</strong> {{showDetail.network.name}}</td>
+          <td><strong>Country</strong>: {{showDetail.network.country.name}}</td>
+          <td colspan="2"><strong>Scheduled at:</strong> {{showDetail.schedule.time}} on {{showDetail.schedule.days}}
+          </td>
+        </tr>-->
+      </table>
+      <h3>Episode List</h3>
+      <!-- Future: add accordion, possibly lazy-load the data -->
+      <div *ngFor="let season of seasonArray">
+        <h5>Season {{season[0].season}}</h5>
+        <table  width="100%" class="table table-bordered table-striped ">
+          <thead>
+          <tr>
+            <th>N</th>
+            <th>Title</th>
+            <th  width="20%">First Aired</th>
+            <th>Summary</th>
+          </tr>
+        </thead>
+          <tr *ngFor="let episode of season">
+            <td>{{episode.episodeNumber}}</td>
+            <td>{{episode.name}}</td>
+            <td>{{episode.firstAiredDate}}</td>
+            <td><span [innerHTML]="episode.summary"></span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
